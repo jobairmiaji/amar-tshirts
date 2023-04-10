@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Main from "./components/Layout/Main";
 import Home from "./components/Home/Home";
 import OrderReview from "./components/OrderReview/OrderReview";
 import Grandpa from "./components/Grandpa/Grandpa";
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,14 @@ const router = createBrowserRouter([
                 loader: () => fetch("tshirts.json"),
             },
             {
+                path: "about",
+                element: <About></About>,
+            },
+            {
+                path: "contact",
+                element: <Contact></Contact>,
+            },
+            {
                 path: "review",
                 element: <OrderReview></OrderReview>,
             },
@@ -26,6 +35,7 @@ const router = createBrowserRouter([
                 path: "grandpa",
                 element: <Grandpa></Grandpa>,
             },
+            {},
         ],
     },
 ]);
